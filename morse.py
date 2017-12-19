@@ -40,9 +40,9 @@ class MorseItActivity(activity.Activity):
 
         # we do not have collaboration features
         # make the share option insensitive
-        self.max_participants = 1
+        self.max_participants = 1s
 
-        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=20)
         self.add(box)
         self.set_canvas(box)
 
@@ -90,11 +90,16 @@ class MorseItActivity(activity.Activity):
         button.connect("clicked", self.on_clicked)
         button.show()
         
+        image = Gtk.Image()
+        image.set_from_file("morse")
+        image.show()
+
         box.show()
         box.add(label)
         box.add(self.text)
         box.add(button)
         box.add(self.text2)
+        box.add(image)
 
     def on_clicked(self, button):
               
